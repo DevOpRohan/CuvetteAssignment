@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="university">University:</label>
+        <input type="text" id="university" name="university" required><br><br>
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if students %}
+    <h2>Submitted Data:</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>University</th>
+            <th>Course</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.university }}</td>
+            <td>{{ student.course }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
